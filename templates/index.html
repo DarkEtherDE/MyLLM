@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLLM.py</title>
+    <style>
+        head {
+            background-color:rgb(31, 31, 31);
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color:rgb(31, 31, 31);
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            background-color: rgb(61, 58, 58);
+            color: rgb(255, 255, 255);
+        }
+        button {
+            padding: 5px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            background-color: rgb(61, 58, 58);
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 16px;
+            white-space: pre-wrap;
+            background-color:rgb(61, 61, 61);
+            color: rgb(255, 255, 255);
+            padding: 15px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: rgb(131, 131, 131);
+        }
+    </style>
+</head>
+<body>
+    <h1>My Book Fanatic</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Ask something..." required>
+        <button type="submit">Ask Away!</button>
+    </form>
+    {% if response %}
+        <div class="response">
+            <h3>Answer:</h3>
+            <p>{{ response }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
